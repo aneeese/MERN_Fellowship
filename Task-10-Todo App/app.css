@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #A4D0E3 !important;
+}
+
+#main-header {
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #061B25;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1 {
+    padding-top: 27px;
+    color: aliceblue;
+}
+
+.container form {
+    display: flex;
+    margin-top: 1.3rem;
+}
+
+.todo-input {
+    border: none;
+    outline: none;
+    color: #A4D0E3;
+    border-radius: 6px;
+    padding: 10px;
+    width: 30rem;
+    background-color: #082937;
+}
+
+.todo-input::placeholder {
+    color: #A4D0E3;
+}
+
+.add-btn {
+    border: none;
+    margin-left: 15px;
+    padding: 16px;
+    width: 101px;
+    height: 56px;
+    color: white;
+    font-weight: 500;
+    background: #FF8C42;
+    border-radius: 6px;
+}
+
+.add-btn:hover {
+    background: #e86c1e;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.remaining, .completed, .total {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    background-color: #061B25;
+    color: #A4D0E3;
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+}
+
+.number {
+    color: #E8F3F8;
+    height: 33.4px;
+    padding: 6px;
+    border-radius: 0 5px 5px 0px;
+    background-color: #1C89B8;
+}
+
+/*To Do List*/
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+.todos {
+    margin-bottom: 4rem;
+}
+
+.todos li {
+    background-color: white;
+    border-radius: 6px;
+    margin-top: 1rem;
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todos li div {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.todos li.complete {
+    background-color: #D2E7F1;
+    text-decoration: line-through;
+    color: #77B8D4;
+}
+
+input[type='checkbox'] {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid #A4D0E3;
+    border-radius: 100%;
+    display: grid;
+    place-content: center;
+    transition: all .2s ease-in-out;
+}
+
+input[type='checkbox']::before {
+    content: url("data:image/svg+xml,%3csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10.5 1L4.5 9L1.5 5.5' stroke='%23D2E7F1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    transform: scale(0);
+    transition: all .2s ease-in-out;
+}
+
+input[type='checkbox']:checked {
+    background-color: #77B8D4;
+    border-color: #77B8D4;
+}
+
+input[type='checkbox']:checked::before {
+    transform: scale(1);
+}
+
+.todos li button {
+    border: 0;
+    padding: .25rem;
+    display: grid;
+    place-content: center;
+    background-color: transparent;
+}
+
+.todos li button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.todos li button svg path {
+    transition: all .2s ease-in-out;
+}
+
+.todos li button:hover svg path {
+    stroke: #77B8D4;
+}
+
+.todos li button:active svg {
+    transform: scale(0.8);
+}
+
+.todos li span {
+    padding: 2px;
+    border-radius: 6px;
+    transition: all .2s ease-in-out;
+}
+
+.todos li span:focus {
+    background-color: #A4D0E3;
+    outline: none;
+}
+
+.todos li span[contenteditable]:hover {
+    background-color: #77B8D4;
+}
+
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+footer span{
+    text-decoration: underline;
+}
+
+/* 768px and above */
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 30rem;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    #todo-form {
+        flex-direction: row;
+    }
+
+    #todo-form input {
+        flex-grow: 1;
+    }
+}
